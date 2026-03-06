@@ -593,13 +593,14 @@ function CarCard({
       style={{ backgroundColor: bpk.surface, borderRadius: 12, boxShadow: bpk.shadow }}
     >
       {/* Car image area (no overlay) */}
-      <div className="relative h-[168px] w-full shrink-0">
-        <img
-          alt={item.name}
-          className="absolute object-contain pointer-events-none"
-          style={{ inset: 16 }}
-          src={ASSETS.carYaris}
-        />
+      <div className="relative h-[168px] w-full shrink-0 overflow-hidden">
+        <div className="absolute inset-4">
+          <img
+            alt={item.name}
+            className="size-full object-contain pointer-events-none"
+            src={ASSETS.carYaris}
+          />
+        </div>
         <div className="absolute top-[6px] right-[6px]">
           <CardActions saved={saved} onSave={onSave} contained={false} />
         </div>
